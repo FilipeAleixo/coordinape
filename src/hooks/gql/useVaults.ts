@@ -73,8 +73,6 @@ export function useVaults({
           return v;
         });
       },
-      staleTime: Infinity,
-      refetchOnWindowFocus: false,
     }
   );
 }
