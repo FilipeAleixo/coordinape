@@ -175,6 +175,11 @@ export const CircleAdminPage = () => {
       // the query will not be executed untill circleId exists
       enabled: !!circleId,
       initialData,
+      // TODO: Metadreamer, do we need these:
+      refetchOnWindowFocus: false,
+
+      staleTime: Infinity,
+      notifyOnChangeProps: ['data'],
     }
   );
   const contracts = useContracts();
