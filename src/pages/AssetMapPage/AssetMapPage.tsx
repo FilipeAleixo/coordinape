@@ -73,5 +73,3 @@ const DevModeInjector = () => {
 
   return <></>;
 };
-
-export default AssetMapPage;

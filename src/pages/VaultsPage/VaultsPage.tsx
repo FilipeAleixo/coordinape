@@ -18,7 +18,7 @@ import { SingleColumnLayout } from 'ui/layouts';
 import { CreateForm } from './CreateForm';
 import { VaultRow } from './VaultRow';
 
-const VaultsPage = () => {
+export const VaultsPage = () => {
   const [modal, setModal] = useState<'' | 'create'>('');
 
   const circleId = useRecoilValueLoadable(rSelectedCircleId).valueMaybe();

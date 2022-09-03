@@ -20,7 +20,7 @@ const PaginatorContainer = styled('div', {
   justifyContent: 'flex-end',
 });
 
-export const PaginatorButton = styled('button', {
+const PaginatorButton = styled('button', {
   width: '$xl',
   height: '$xl !important',
   fontFamily: 'Inter',
@@ -58,7 +58,7 @@ export const PaginatorButton = styled('button', {
   },
 });
 
-export interface PaginationProps {
+interface PaginationProps {
   currentPage: number;
   totalPages?: number;
   totalItems?: number;

@@ -252,5 +252,3 @@ export const AMForceGraph = () => {
     </div>
   );
 };
-
-export default AMForceGraph;

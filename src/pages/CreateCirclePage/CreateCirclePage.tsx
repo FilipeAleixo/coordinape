@@ -17,7 +17,7 @@ import { Box, Button, Flex, FormLabel, Avatar, Panel, Text, Tooltip } from 'ui';
 import { SingleColumnLayout } from 'ui/layouts';
 import { getCircleAvatar } from 'utils/domain';
 
-export const SummonCirclePage = () => {
+export const CreateCirclePage = () => {
   const navigate = useNavigate();
   const [params] = useSearchParams();
   // const { myUser } = useSelectedCircle();
@@ -278,4 +278,4 @@ export const SummonCirclePage = () => {
   );
 };
 
-export default SummonCirclePage;
+export default CreateCirclePage;

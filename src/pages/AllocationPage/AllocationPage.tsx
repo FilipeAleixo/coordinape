@@ -32,7 +32,7 @@ import {
   Teammate,
 } from './queries';
 
-const AllocationPage = () => {
+export const AllocationPage = () => {
   const address = useConnectedAddress();
   const { circle: selectedCircle } = useSelectedCircle();
 
@@ -288,5 +288,3 @@ const AllocationContents = ({
     </Box>
   );
 };
-
-export default AllocationPage;

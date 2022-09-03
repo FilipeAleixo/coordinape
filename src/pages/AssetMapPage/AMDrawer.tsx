@@ -269,5 +269,3 @@ export const AMDrawer = () => {
     </>
   );
 };
-
-export default AMDrawer;

@@ -22,7 +22,7 @@ import {
   useWelcomeToken,
 } from './useCircleTokens';
 
-const AddMembersPage = () => {
+export const AddMembersPage = () => {
   const { circleId, circle } = useSelectedCircle();
 
   const [loading, setLoading] = useState<boolean>(false);

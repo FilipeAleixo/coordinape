@@ -138,18 +138,6 @@ export type PotentialTeammate = Awaited<
   ReturnType<typeof getTeammates>
 >['allUsers'][number];
 
-export const getCurrentTeammates = async (
-  selectedCircleId: number,
-  address: string,
-  teamSelection: boolean
-) => {
-  if (teamSelection) {
-    return await getSelectedCurrentTeammates(selectedCircleId, address);
-  } else {
-    return await getAllAvailableUsers(selectedCircleId, address);
-  }
-};
-
 const getAllAvailableUsers = async (
   selectedCircleId: number,
   address: string

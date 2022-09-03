@@ -13,7 +13,7 @@ import { ApiKeyRow } from './ApiKeyRow';
 import { deleteCircleApiKey } from './mutations';
 import { useCircleApiKeys } from './useCircleApiKeys';
 
-const AdminCircleApiPage = () => {
+export const AdminCircleApiPage = () => {
   const [modal, setModal] = useState<'' | 'create' | 'display'>('');
   const [keyToDelete, setKeyToDelete] = useState('');
   const [displayedKey, setDisplayedKey] = useState('');
@@ -110,5 +110,3 @@ const AdminCircleApiPage = () => {
     </OrgLayout>
   );
 };
-
-export default AdminCircleApiPage;

@@ -155,5 +155,3 @@ export const ApeToggle = ({
     </div>
   );
 };
-
-export default ApeToggle;

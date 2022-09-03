@@ -124,7 +124,7 @@ export const UsersTableHeader = ({
   );
 };
 
-export const renderUserCard = (user: IUser, tokenName: string) => {
+const renderUserCard = (user: IUser, tokenName: string) => {
   return (
     <Flex
       css={{
@@ -180,14 +180,6 @@ export const renderUserCard = (user: IUser, tokenName: string) => {
     </Flex>
   );
 };
-
-export const TableLink = styled(RouterLink, {
-  color: '$link',
-  '&:hover': {
-    opacity: 0.8,
-  },
-  textDecoration: 'none',
-});
 
 const coordinapeTooltipContent = () => {
   return (

@@ -84,5 +84,3 @@ export const AllocationStepper = ({
     </Stepper>
   );
 };
-
-export default AllocationStepper;

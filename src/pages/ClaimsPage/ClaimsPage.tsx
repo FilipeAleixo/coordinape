@@ -129,7 +129,7 @@ const ClaimsRowOuter: React.FC<ClaimsRowData> = ({ claim, group, children }) =>
     </DeletedUserClaimsRow>
   );
 
-export default function ClaimsPage() {
+export function ClaimsPage() {
   // this causes errors if it's run at the top-level
   const ClaimsTable = makeTable<ClaimsRowData>('ClaimsTable');
 

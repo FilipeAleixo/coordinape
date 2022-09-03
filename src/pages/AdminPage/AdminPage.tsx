@@ -23,7 +23,7 @@ import {
 
 import { IUser } from 'types';
 
-const AdminPage = () => {
+export const AdminPage = () => {
   const { isMobile } = useMobileDetect();
 
   const [keyword, setKeyword] = useState<string>('');

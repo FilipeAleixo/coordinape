@@ -256,5 +256,3 @@ export const AdminUserModal = ({
     </AdminUserForm.FormController>
   );
 };
-
-export default AdminUserModal;

@@ -11,25 +11,25 @@ import {
   useLocation,
 } from 'react-router-dom';
 
-import AddMembersPage from '../pages/AddMembersPage/AddMembersPage';
-import JoinCirclePage from '../pages/JoinCirclePage';
+import { AddMembersPage } from '../pages/AddMembersPage/AddMembersPage';
+import { AdminCircleApiPage } from '../pages/AdminCircleApiPage/AdminCircleApiPage';
+import { JoinCirclePage } from '../pages/JoinCirclePage/JoinCirclePage';
 import { useFixCircleState, useRoleInCircle } from 'hooks/migration';
-import AdminCircleApiPage from 'pages/AdminCircleApiPage/AdminCircleApiPage';
-import AdminPage from 'pages/AdminPage';
-import AllocationPage from 'pages/AllocationPage';
-import CircleAdminPage from 'pages/CircleAdminPage';
-import CirclesPage from 'pages/CirclesPage';
-import ClaimsPage from 'pages/ClaimsPage';
-import CreateCirclePage from 'pages/CreateCirclePage';
-import DefaultPage from 'pages/DefaultPage';
-import DevPortalPage from 'pages/DevPortalPage';
-import DistributionsPage from 'pages/DistributionsPage';
-import HistoryPage from 'pages/HistoryPage';
-import IntegrationCallbackPage from 'pages/IntegrationCallbackPage';
-import ProfilePage from 'pages/ProfilePage';
-import VaultsPage from 'pages/VaultsPage';
+import { AdminPage } from 'pages/AdminPage/AdminPage';
+import { AllocationPage } from 'pages/AllocationPage/AllocationPage';
+import { CircleAdminPage } from 'pages/CircleAdminPage/CircleAdminPage';
+import { CirclesPage } from 'pages/CirclesPage/CirclesPage';
+import { ClaimsPage } from 'pages/ClaimsPage/ClaimsPage';
+import { CreateCirclePage } from 'pages/CreateCirclePage/CreateCirclePage';
+import { DefaultPage } from 'pages/DefaultPage/DefaultPage';
+import { DevPortalPage } from 'pages/DevPortalPage/DevPortalPage';
+import { DistributionsPage } from 'pages/DistributionsPage/DistributionsPage';
+import { HistoryPage } from 'pages/HistoryPage/HistoryPage';
+import { IntegrationCallbackPage } from 'pages/IntegrationCallbackPage/IntegrationCallbackPage';
+import { ProfilePage } from 'pages/ProfilePage/ProfilePage';
+import { VaultsPage } from 'pages/VaultsPage/VaultsPage';
 import { VaultTransactions } from 'pages/VaultsPage/VaultTransactions';
-import VouchingPage from 'pages/VouchingPage';
+import { VouchingPage } from 'pages/VouchingPage/VouchingPage';
 
 import { paths } from './paths';
 const log = debug('routes');
