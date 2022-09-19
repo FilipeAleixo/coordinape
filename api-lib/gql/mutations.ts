@@ -422,6 +422,34 @@ export async function updateNomineeUser(nomineeId: number, userId: number) {
   return update_nominees_by_pk;
 }
 
+export async function updateProtocol(
+  params: ValueTypes['organizations_set_input'] & { id: number }
+) {
+  const { id, ...protocolSetInput } = params;
+
+  const { update_organizations_by_pk } = await adminClient.mutate(
+    {
+      update_organizations_by_pk: [
+        {
+          pk_columns: {
+            id: id,
+          },
+          _set: {
+            ...protocolSetInput,
+          },
+        },
+        {
+          id: true,
+        },
+      ],
+    },
+    {
+      operationName: 'updateProtocol',
+    }
+  );
+  return update_organizations_by_pk;
+}
+
 export async function updateCircle(params: ValueTypes['UpdateCircleInput']) {
   const { update_webhook, circle_id, ...circleSetInput } = params;
 

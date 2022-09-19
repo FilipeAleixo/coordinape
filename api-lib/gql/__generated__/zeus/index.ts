@@ -323,7 +323,7 @@ export class GraphQLError extends Error {
   constructor(public response: GraphQLResponse) {
     super('');
     // eslint-disable-next-line no-console
-    console.info(JSON.stringify(response, null, 2));
+    console.info(JSON.stringify(response));
   }
   toString() {
     return 'GraphQL Response Error';
@@ -905,6 +905,14 @@ export type ValueTypes = {
     id?: boolean | `@${string}`;
     /** An object relationship */
     profile?: ValueTypes['profiles'];
+    __typename?: boolean | `@${string}`;
+  }>;
+  ['UpdateProtocolInput']: {
+    id: string;
+    name: string;
+  };
+  ['UpdateProtocolOutput']: AliasType<{
+    id?: boolean | `@${string}`;
     __typename?: boolean | `@${string}`;
   }>;
   ['UpdateTeammatesInput']: {
@@ -5963,7 +5971,6 @@ columns and relationships of "distributions" */
     org_id?: boolean | `@${string}`;
     profile_id?: boolean | `@${string}`;
     updated_at?: boolean | `@${string}`;
-    user_id?: boolean | `@${string}`;
     __typename?: boolean | `@${string}`;
   }>;
   /** aggregated selection of "interaction_events" */
@@ -6006,7 +6013,6 @@ columns and relationships of "distributions" */
     id?: boolean | `@${string}`;
     org_id?: boolean | `@${string}`;
     profile_id?: boolean | `@${string}`;
-    user_id?: boolean | `@${string}`;
     __typename?: boolean | `@${string}`;
   }>;
   /** Boolean expression to filter rows from the table "interaction_events". All fields are combined with a logical 'AND'. */
@@ -6023,7 +6029,6 @@ columns and relationships of "distributions" */
     org_id?: ValueTypes['Int_comparison_exp'] | undefined | null;
     profile_id?: ValueTypes['Int_comparison_exp'] | undefined | null;
     updated_at?: ValueTypes['timestamptz_comparison_exp'] | undefined | null;
-    user_id?: ValueTypes['Int_comparison_exp'] | undefined | null;
   };
   /** unique or primary key constraints on table "interaction_events" */
   ['interaction_events_constraint']: interaction_events_constraint;
@@ -6045,7 +6050,6 @@ columns and relationships of "distributions" */
     id?: number | undefined | null;
     org_id?: number | undefined | null;
     profile_id?: number | undefined | null;
-    user_id?: number | undefined | null;
   };
   /** input type for inserting data into table "interaction_events" */
   ['interaction_events_insert_input']: {
@@ -6058,7 +6062,6 @@ columns and relationships of "distributions" */
     org_id?: number | undefined | null;
     profile_id?: number | undefined | null;
     updated_at?: ValueTypes['timestamptz'] | undefined | null;
-    user_id?: number | undefined | null;
   };
   /** aggregate max on columns */
   ['interaction_events_max_fields']: AliasType<{
@@ -6070,7 +6073,6 @@ columns and relationships of "distributions" */
     org_id?: boolean | `@${string}`;
     profile_id?: boolean | `@${string}`;
     updated_at?: boolean | `@${string}`;
-    user_id?: boolean | `@${string}`;
     __typename?: boolean | `@${string}`;
   }>;
   /** aggregate min on columns */
@@ -6083,7 +6085,6 @@ columns and relationships of "distributions" */
     org_id?: boolean | `@${string}`;
     profile_id?: boolean | `@${string}`;
     updated_at?: boolean | `@${string}`;
-    user_id?: boolean | `@${string}`;
     __typename?: boolean | `@${string}`;
   }>;
   /** response of any mutation on the table "interaction_events" */
@@ -6111,7 +6112,6 @@ columns and relationships of "distributions" */
     org_id?: ValueTypes['order_by'] | undefined | null;
     profile_id?: ValueTypes['order_by'] | undefined | null;
     updated_at?: ValueTypes['order_by'] | undefined | null;
-    user_id?: ValueTypes['order_by'] | undefined | null;
   };
   /** primary key columns input for table: interaction_events */
   ['interaction_events_pk_columns_input']: {
@@ -6134,7 +6134,6 @@ columns and relationships of "distributions" */
     org_id?: number | undefined | null;
     profile_id?: number | undefined | null;
     updated_at?: ValueTypes['timestamptz'] | undefined | null;
-    user_id?: number | undefined | null;
   };
   /** aggregate stddev on columns */
   ['interaction_events_stddev_fields']: AliasType<{
@@ -6142,7 +6141,6 @@ columns and relationships of "distributions" */
     id?: boolean | `@${string}`;
     org_id?: boolean | `@${string}`;
     profile_id?: boolean | `@${string}`;
-    user_id?: boolean | `@${string}`;
     __typename?: boolean | `@${string}`;
   }>;
   /** aggregate stddev_pop on columns */
@@ -6151,7 +6149,6 @@ columns and relationships of "distributions" */
     id?: boolean | `@${string}`;
     org_id?: boolean | `@${string}`;
     profile_id?: boolean | `@${string}`;
-    user_id?: boolean | `@${string}`;
     __typename?: boolean | `@${string}`;
   }>;
   /** aggregate stddev_samp on columns */
@@ -6160,7 +6157,6 @@ columns and relationships of "distributions" */
     id?: boolean | `@${string}`;
     org_id?: boolean | `@${string}`;
     profile_id?: boolean | `@${string}`;
-    user_id?: boolean | `@${string}`;
     __typename?: boolean | `@${string}`;
   }>;
   /** aggregate sum on columns */
@@ -6169,7 +6165,6 @@ columns and relationships of "distributions" */
     id?: boolean | `@${string}`;
     org_id?: boolean | `@${string}`;
     profile_id?: boolean | `@${string}`;
-    user_id?: boolean | `@${string}`;
     __typename?: boolean | `@${string}`;
   }>;
   /** update columns of table "interaction_events" */
@@ -6180,7 +6175,6 @@ columns and relationships of "distributions" */
     id?: boolean | `@${string}`;
     org_id?: boolean | `@${string}`;
     profile_id?: boolean | `@${string}`;
-    user_id?: boolean | `@${string}`;
     __typename?: boolean | `@${string}`;
   }>;
   /** aggregate var_samp on columns */
@@ -6189,7 +6183,6 @@ columns and relationships of "distributions" */
     id?: boolean | `@${string}`;
     org_id?: boolean | `@${string}`;
     profile_id?: boolean | `@${string}`;
-    user_id?: boolean | `@${string}`;
     __typename?: boolean | `@${string}`;
   }>;
   /** aggregate variance on columns */
@@ -6198,7 +6191,6 @@ columns and relationships of "distributions" */
     id?: boolean | `@${string}`;
     org_id?: boolean | `@${string}`;
     profile_id?: boolean | `@${string}`;
-    user_id?: boolean | `@${string}`;
     __typename?: boolean | `@${string}`;
   }>;
   ['json']: unknown;
@@ -7150,6 +7142,10 @@ columns and relationships of "distributions" */
     restoreCoordinape?: [
       { payload: ValueTypes['CoordinapeInput'] },
       ValueTypes['ConfirmationResponse']
+    ];
+    update?: [
+      { input: ValueTypes['UpdateProtocolInput'] },
+      ValueTypes['UpdateProtocolOutput']
     ];
     updateAllocations?: [
       { payload: ValueTypes['Allocations'] },
@@ -16211,6 +16207,10 @@ export type ModelTypes = {
     /** An object relationship */
     profile: GraphQLTypes['profiles'];
   };
+  ['UpdateProtocolInput']: GraphQLTypes['UpdateProtocolInput'];
+  ['UpdateProtocolOutput']: {
+    id: string;
+  };
   ['UpdateTeammatesInput']: GraphQLTypes['UpdateTeammatesInput'];
   ['UpdateTeammatesResponse']: {
     /** An object relationship */
@@ -18403,7 +18403,6 @@ columns and relationships of "distributions" */
     org_id?: number | undefined;
     profile_id?: number | undefined;
     updated_at?: GraphQLTypes['timestamptz'] | undefined;
-    user_id?: number | undefined;
   };
   /** aggregated selection of "interaction_events" */
   ['interaction_events_aggregate']: {
@@ -18436,7 +18435,6 @@ columns and relationships of "distributions" */
     id?: number | undefined;
     org_id?: number | undefined;
     profile_id?: number | undefined;
-    user_id?: number | undefined;
   };
   /** Boolean expression to filter rows from the table "interaction_events". All fields are combined with a logical 'AND'. */
   ['interaction_events_bool_exp']: GraphQLTypes['interaction_events_bool_exp'];
@@ -18462,7 +18460,6 @@ columns and relationships of "distributions" */
     org_id?: number | undefined;
     profile_id?: number | undefined;
     updated_at?: GraphQLTypes['timestamptz'] | undefined;
-    user_id?: number | undefined;
   };
   /** aggregate min on columns */
   ['interaction_events_min_fields']: {
@@ -18474,7 +18471,6 @@ columns and relationships of "distributions" */
     org_id?: number | undefined;
     profile_id?: number | undefined;
     updated_at?: GraphQLTypes['timestamptz'] | undefined;
-    user_id?: number | undefined;
   };
   /** response of any mutation on the table "interaction_events" */
   ['interaction_events_mutation_response']: {
@@ -18501,7 +18497,6 @@ columns and relationships of "distributions" */
     id?: number | undefined;
     org_id?: number | undefined;
     profile_id?: number | undefined;
-    user_id?: number | undefined;
   };
   /** aggregate stddev_pop on columns */
   ['interaction_events_stddev_pop_fields']: {
@@ -18509,7 +18504,6 @@ columns and relationships of "distributions" */
     id?: number | undefined;
     org_id?: number | undefined;
     profile_id?: number | undefined;
-    user_id?: number | undefined;
   };
   /** aggregate stddev_samp on columns */
   ['interaction_events_stddev_samp_fields']: {
@@ -18517,7 +18511,6 @@ columns and relationships of "distributions" */
     id?: number | undefined;
     org_id?: number | undefined;
     profile_id?: number | undefined;
-    user_id?: number | undefined;
   };
   /** aggregate sum on columns */
   ['interaction_events_sum_fields']: {
@@ -18525,7 +18518,6 @@ columns and relationships of "distributions" */
     id?: number | undefined;
     org_id?: number | undefined;
     profile_id?: number | undefined;
-    user_id?: number | undefined;
   };
   /** update columns of table "interaction_events" */
   ['interaction_events_update_column']: GraphQLTypes['interaction_events_update_column'];
@@ -18535,7 +18527,6 @@ columns and relationships of "distributions" */
     id?: number | undefined;
     org_id?: number | undefined;
     profile_id?: number | undefined;
-    user_id?: number | undefined;
   };
   /** aggregate var_samp on columns */
   ['interaction_events_var_samp_fields']: {
@@ -18543,7 +18534,6 @@ columns and relationships of "distributions" */
     id?: number | undefined;
     org_id?: number | undefined;
     profile_id?: number | undefined;
-    user_id?: number | undefined;
   };
   /** aggregate variance on columns */
   ['interaction_events_variance_fields']: {
@@ -18551,7 +18541,6 @@ columns and relationships of "distributions" */
     id?: number | undefined;
     org_id?: number | undefined;
     profile_id?: number | undefined;
-    user_id?: number | undefined;
   };
   ['json']: any;
   /** Boolean expression to compare columns of type "json". All fields are combined with logical 'AND'. */
@@ -18895,6 +18884,8 @@ columns and relationships of "distributions" */
     insert_vouches_one?: GraphQLTypes['vouches'] | undefined;
     logoutUser?: GraphQLTypes['LogoutResponse'] | undefined;
     restoreCoordinape?: GraphQLTypes['ConfirmationResponse'] | undefined;
+    /** UpdateProtocolData */
+    update?: GraphQLTypes['UpdateProtocolOutput'] | undefined;
     updateAllocations?: GraphQLTypes['AllocationsResponse'] | undefined;
     updateCircle?: GraphQLTypes['UpdateCircleOutput'] | undefined;
     updateEpoch?: GraphQLTypes['EpochResponse'] | undefined;
@@ -22065,6 +22056,14 @@ export type GraphQLTypes = {
     id: number;
     /** An object relationship */
     profile: GraphQLTypes['profiles'];
+  };
+  ['UpdateProtocolInput']: {
+    id: string;
+    name: string;
+  };
+  ['UpdateProtocolOutput']: {
+    __typename: 'UpdateProtocolOutput';
+    id: string;
   };
   ['UpdateTeammatesInput']: {
     circle_id: number;
@@ -26200,7 +26199,6 @@ columns and relationships of "distributions" */
     org_id?: number | undefined;
     profile_id?: number | undefined;
     updated_at?: GraphQLTypes['timestamptz'] | undefined;
-    user_id?: number | undefined;
   };
   /** aggregated selection of "interaction_events" */
   ['interaction_events_aggregate']: {
@@ -26238,7 +26236,6 @@ columns and relationships of "distributions" */
     id?: number | undefined;
     org_id?: number | undefined;
     profile_id?: number | undefined;
-    user_id?: number | undefined;
   };
   /** Boolean expression to filter rows from the table "interaction_events". All fields are combined with a logical 'AND'. */
   ['interaction_events_bool_exp']: {
@@ -26254,7 +26251,6 @@ columns and relationships of "distributions" */
     org_id?: GraphQLTypes['Int_comparison_exp'] | undefined;
     profile_id?: GraphQLTypes['Int_comparison_exp'] | undefined;
     updated_at?: GraphQLTypes['timestamptz_comparison_exp'] | undefined;
-    user_id?: GraphQLTypes['Int_comparison_exp'] | undefined;
   };
   /** unique or primary key constraints on table "interaction_events" */
   ['interaction_events_constraint']: interaction_events_constraint;
@@ -26276,7 +26272,6 @@ columns and relationships of "distributions" */
     id?: number | undefined;
     org_id?: number | undefined;
     profile_id?: number | undefined;
-    user_id?: number | undefined;
   };
   /** input type for inserting data into table "interaction_events" */
   ['interaction_events_insert_input']: {
@@ -26289,7 +26284,6 @@ columns and relationships of "distributions" */
     org_id?: number | undefined;
     profile_id?: number | undefined;
     updated_at?: GraphQLTypes['timestamptz'] | undefined;
-    user_id?: number | undefined;
   };
   /** aggregate max on columns */
   ['interaction_events_max_fields']: {
@@ -26302,7 +26296,6 @@ columns and relationships of "distributions" */
     org_id?: number | undefined;
     profile_id?: number | undefined;
     updated_at?: GraphQLTypes['timestamptz'] | undefined;
-    user_id?: number | undefined;
   };
   /** aggregate min on columns */
   ['interaction_events_min_fields']: {
@@ -26315,7 +26308,6 @@ columns and relationships of "distributions" */
     org_id?: number | undefined;
     profile_id?: number | undefined;
     updated_at?: GraphQLTypes['timestamptz'] | undefined;
-    user_id?: number | undefined;
   };
   /** response of any mutation on the table "interaction_events" */
   ['interaction_events_mutation_response']: {
@@ -26342,7 +26334,6 @@ columns and relationships of "distributions" */
     org_id?: GraphQLTypes['order_by'] | undefined;
     profile_id?: GraphQLTypes['order_by'] | undefined;
     updated_at?: GraphQLTypes['order_by'] | undefined;
-    user_id?: GraphQLTypes['order_by'] | undefined;
   };
   /** primary key columns input for table: interaction_events */
   ['interaction_events_pk_columns_input']: {
@@ -26365,7 +26356,6 @@ columns and relationships of "distributions" */
     org_id?: number | undefined;
     profile_id?: number | undefined;
     updated_at?: GraphQLTypes['timestamptz'] | undefined;
-    user_id?: number | undefined;
   };
   /** aggregate stddev on columns */
   ['interaction_events_stddev_fields']: {
@@ -26374,7 +26364,6 @@ columns and relationships of "distributions" */
     id?: number | undefined;
     org_id?: number | undefined;
     profile_id?: number | undefined;
-    user_id?: number | undefined;
   };
   /** aggregate stddev_pop on columns */
   ['interaction_events_stddev_pop_fields']: {
@@ -26383,7 +26372,6 @@ columns and relationships of "distributions" */
     id?: number | undefined;
     org_id?: number | undefined;
     profile_id?: number | undefined;
-    user_id?: number | undefined;
   };
   /** aggregate stddev_samp on columns */
   ['interaction_events_stddev_samp_fields']: {
@@ -26392,7 +26380,6 @@ columns and relationships of "distributions" */
     id?: number | undefined;
     org_id?: number | undefined;
     profile_id?: number | undefined;
-    user_id?: number | undefined;
   };
   /** aggregate sum on columns */
   ['interaction_events_sum_fields']: {
@@ -26401,7 +26388,6 @@ columns and relationships of "distributions" */
     id?: number | undefined;
     org_id?: number | undefined;
     profile_id?: number | undefined;
-    user_id?: number | undefined;
   };
   /** update columns of table "interaction_events" */
   ['interaction_events_update_column']: interaction_events_update_column;
@@ -26412,7 +26398,6 @@ columns and relationships of "distributions" */
     id?: number | undefined;
     org_id?: number | undefined;
     profile_id?: number | undefined;
-    user_id?: number | undefined;
   };
   /** aggregate var_samp on columns */
   ['interaction_events_var_samp_fields']: {
@@ -26421,7 +26406,6 @@ columns and relationships of "distributions" */
     id?: number | undefined;
     org_id?: number | undefined;
     profile_id?: number | undefined;
-    user_id?: number | undefined;
   };
   /** aggregate variance on columns */
   ['interaction_events_variance_fields']: {
@@ -26430,7 +26414,6 @@ columns and relationships of "distributions" */
     id?: number | undefined;
     org_id?: number | undefined;
     profile_id?: number | undefined;
-    user_id?: number | undefined;
   };
   ['json']: any;
   /** Boolean expression to compare columns of type "json". All fields are combined with logical 'AND'. */
@@ -26805,6 +26788,8 @@ columns and relationships of "distributions" */
     insert_vouches_one?: GraphQLTypes['vouches'] | undefined;
     logoutUser?: GraphQLTypes['LogoutResponse'] | undefined;
     restoreCoordinape?: GraphQLTypes['ConfirmationResponse'] | undefined;
+    /** UpdateProtocolData */
+    update?: GraphQLTypes['UpdateProtocolOutput'] | undefined;
     updateAllocations?: GraphQLTypes['AllocationsResponse'] | undefined;
     updateCircle?: GraphQLTypes['UpdateCircleOutput'] | undefined;
     updateEpoch?: GraphQLTypes['EpochResponse'] | undefined;
@@ -32073,7 +32058,6 @@ export const enum interaction_events_select_column {
   org_id = 'org_id',
   profile_id = 'profile_id',
   updated_at = 'updated_at',
-  user_id = 'user_id',
 }
 /** update columns of table "interaction_events" */
 export const enum interaction_events_update_column {
@@ -32086,7 +32070,6 @@ export const enum interaction_events_update_column {
   org_id = 'org_id',
   profile_id = 'profile_id',
   updated_at = 'updated_at',
-  user_id = 'user_id',
 }
 /** unique or primary key constraints on table "nominees" */
 export const enum nominees_constraint {

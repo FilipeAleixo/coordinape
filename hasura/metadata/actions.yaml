@@ -149,6 +149,11 @@ actions:
           value_from_env: HASURA_EVENT_SECRET
     permissions:
       - role: user
+  - name: update
+    definition:
+      kind: synchronous
+      handler: '{{HASURA_API_BASE_URL}}/actions/actionManager'
+    comment: UpdateProtocolData
   - name: updateAllocations
     definition:
       kind: synchronous
@@ -277,6 +282,7 @@ custom_types:
     - name: DeleteCircleInput
     - name: CircleLandingInfoInput
     - name: CreateUserWithTokenInput
+    - name: UpdateProtocolInput
   objects:
     - name: CreateCircleResponse
       relationships:
@@ -441,5 +447,6 @@ custom_types:
             id: id
     - name: DeleteCircleResponse
     - name: CircleLandingInfoResponse
+    - name: UpdateProtocolOutput
   scalars:
     - name: timestamptz

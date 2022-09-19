@@ -1555,6 +1555,14 @@ export const AllTypesProps: Record<string, any> = {
       _set: 'distributions_set_input',
       pk_columns: 'distributions_pk_columns_input',
     },
+    update_organizations: {
+      _set: 'organizations_set_input',
+      where: 'organizations_bool_exp',
+    },
+    update_organizations_by_pk: {
+      _set: 'organizations_set_input',
+      pk_columns: 'organizations_pk_columns_input',
+    },
     update_profiles: {
       _set: 'profiles_set_input',
       where: 'profiles_bool_exp',
@@ -1775,7 +1783,11 @@ export const AllTypesProps: Record<string, any> = {
     updated_at: 'order_by',
     vaults_aggregate: 'vaults_aggregate_order_by',
   },
+  organizations_pk_columns_input: {
+    id: 'bigint',
+  },
   organizations_select_column: true,
+  organizations_set_input: {},
   pending_gift_private_bool_exp: {
     _and: 'pending_gift_private_bool_exp',
     _not: 'pending_gift_private_bool_exp',
@@ -3913,6 +3925,8 @@ export const ReturnTypes: Record<string, any> = {
     update_contributions_by_pk: 'contributions',
     update_distributions: 'distributions_mutation_response',
     update_distributions_by_pk: 'distributions',
+    update_organizations: 'organizations_mutation_response',
+    update_organizations_by_pk: 'organizations',
     update_profiles: 'profiles_mutation_response',
     update_profiles_by_pk: 'profiles',
     uploadCircleLogo: 'UpdateCircleResponse',
@@ -4049,6 +4063,10 @@ export const ReturnTypes: Record<string, any> = {
     name: 'String',
     updated_at: 'timestamp',
     vaults: 'vaults',
+  },
+  organizations_mutation_response: {
+    affected_rows: 'Int',
+    returning: 'organizations',
   },
   pending_gift_private: {
     gift_id: 'bigint',
