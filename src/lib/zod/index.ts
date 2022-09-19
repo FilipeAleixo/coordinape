@@ -10,6 +10,7 @@ import {
   zEthAddress,
   zUsername,
   zCircleName,
+  zProtocolName,
 } from '../../forms/formHelpers';
 
 const PERSONAL_SIGN_REGEX = /0x[0-9a-f]{130}/;
@@ -39,7 +40,7 @@ export const createCircleSchemaInput = z
     circle_name: zCircleName,
     image_data_base64: z.string().optional(),
     protocol_id: z.number().int().positive().optional(),
-    protocol_name: z.string().min(3).max(255).optional(),
+    protocol_name: zProtocolName,
     contact: z.string().min(3).max(255).optional(),
   })
   .strict()
@@ -276,6 +277,13 @@ export const updateCircleInput = z
       .transform(s => (s === 'Disabled' ? null : s))
       .optional(),
     fixed_payment_vault_id: z.number().positive().nullable().optional(),
+  })
+  .strict();
+
+export const updateProtocolInput = z
+  .object({
+    id: z.number(),
+    name: zProtocolName,
   })
   .strict();
 

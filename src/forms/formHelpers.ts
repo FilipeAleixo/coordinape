@@ -55,3 +55,10 @@ export const zCircleName = z
   .max(255)
   .transform(val => val.trim())
   .refine(val => val.length >= 3);
+
+export const zProtocolName = z
+  .string()
+  .max(70)
+  .transform(val => val.trim())
+  .refine(val => val.length >= 3)
+  .optional();
