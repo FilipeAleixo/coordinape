@@ -13,8 +13,9 @@ import {
   useSetAmEgoAddress,
   AmContextDefault,
 } from 'recoilState/map';
-// i don't know how to remove this AVATAR_PLACEHOLDER
-import { AVATAR_PLACEHOLDER } from 'utils/domain';
+
+// FIXME remove this later
+const AVATAR_PLACEHOLDER = '/imgs/avatar/placeholder.jpg';
 
 import { IMapContext, IMapNodeFG, IMapEdgeFG } from 'types';
 

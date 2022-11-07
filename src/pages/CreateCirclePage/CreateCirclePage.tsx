@@ -40,11 +40,7 @@ export const SummonCirclePage = () => {
     avatar: string;
     avatarRaw: File | null;
   }>({
-    // i don't know who to remove this getCircleAvatar in line 44
-    avatar: getCircleAvatar({
-      avatar: undefined,
-      circleName: 'CO',
-    }),
+    avatar: '',
     avatarRaw: null,
   });
 
@@ -194,6 +190,7 @@ export const SummonCirclePage = () => {
                     <Avatar
                       size="medium"
                       margin="none"
+                      name="CO"
                       path={logoData.avatar}
                     />
                     <FormLabel
