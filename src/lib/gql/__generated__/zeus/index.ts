@@ -685,6 +685,7 @@ export type ValueTypes = {
   ['CreateEpochInput']: {
     circle_id: number;
     days: number;
+    description: string;
     grant?: number | undefined | null;
     repeat: number;
     start_date: ValueTypes['timestamptz'];
@@ -882,6 +883,7 @@ export type ValueTypes = {
   ['UpdateEpochInput']: {
     circle_id: number;
     days: number;
+    description: string;
     grant?: number | undefined | null;
     id: number;
     repeat: number;
@@ -11780,6 +11782,7 @@ export type GraphQLTypes = {
   ['CreateEpochInput']: {
     circle_id: number;
     days: number;
+    description: string;
     grant?: number | undefined;
     repeat: number;
     start_date: GraphQLTypes['timestamptz'];
@@ -11977,6 +11980,7 @@ export type GraphQLTypes = {
   ['UpdateEpochInput']: {
     circle_id: number;
     days: number;
+    description: string;
     grant?: number | undefined;
     id: number;
     repeat: number;
