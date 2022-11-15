@@ -23,6 +23,7 @@ export const getEpochData = async (
           ended: true,
           start_date: true,
           end_date: true,
+          description: true,
           circle: {
             id: true,
             name: true,

@@ -330,7 +330,7 @@ const GivePage = () => {
             </Text>
             {currentEpoch && (
               <Text inline h1 normal css={{ ml: '$md' }}>
-                Epoch {currentEpoch.number}:{' '}
+                {currentEpoch.description ?? `Epoch ${currentEpoch.number}`}:{' '}
                 {currentEpoch.startDate.toFormat('MMM d')} -{' '}
                 {currentEpoch.endDate.toFormat(
                   currentEpoch.endDate.month === currentEpoch.startDate.month

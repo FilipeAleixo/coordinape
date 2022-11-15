@@ -535,6 +535,7 @@ export async function getEpoch(
           end_date: true,
           grant: true,
           number: true,
+          description: true,
           circle: {
             name: true,
             organization: {

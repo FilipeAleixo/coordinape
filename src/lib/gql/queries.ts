@@ -293,6 +293,7 @@ export const getFullCircle = async (
               days: true,
               repeat: true,
               repeat_day_of_month: true,
+              description: true,
             },
           ],
           users: [
@@ -539,6 +540,7 @@ export const fetchManifest = async (address: string): Promise<IApiManifest> => {
           days: true,
           repeat: true,
           repeat_day_of_month: true,
+          description: true,
         },
       ],
       profiles: [
