@@ -15,7 +15,6 @@ export * from './FormInputField';
 export * from './FormModal';
 export * from './FormRadioGroup';
 export * from './FormRadioSelect';
-export * from './DeprecatedFormTextField';
 export * from './FormTimePicker';
 export * from './FormTokenField';
 export * from './GlobalUi';
